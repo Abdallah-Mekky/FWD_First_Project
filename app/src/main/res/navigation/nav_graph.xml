@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/loginFragment">
+
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.task1.shoesappfwd.ui.login.LoginFragment"
+        android:label="Login"
+        tools:layout="@layout/fragment_login">
+        <action
+            android:id="@+id/action_loginFragment_to_welcomeFragment"
+            app:destination="@id/welcomeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/welcomeFragment"
+        android:name="com.task1.shoesappfwd.ui.welcome.WelcomeFragment"
+        android:label="Welcome"
+        tools:layout="@layout/fragment_welcome">
+        <action
+            android:id="@+id/action_welcomeFragment_to_instructionFragment"
+            app:destination="@id/instructionFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/instructionFragment"
+        android:name="com.task1.shoesappfwd.ui.instruction.InstructionFragment"
+        android:label="Instruction"
+        tools:layout="@layout/fragment_instruction">
+        <action
+            android:id="@+id/action_instructionFragment_to_shoesListFragment"
+            app:destination="@id/shoesListFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/shoesListFragment"
+        android:name="com.task1.shoesappfwd.ui.shoesList.ShoesListFragment"
+        android:label="Shoes List"
+        tools:layout="@layout/fragment_shoes_list">
+        <action
+            android:id="@+id/action_shoesListFragment_to_shoeDetailsFragment"
+            app:destination="@id/shoeDetailsFragment" />
+        <action
+            android:id="@+id/action_shoesListFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/shoeDetailsFragment"
+        android:name="com.task1.shoesappfwd.ui.shoeDetails.ShoeDetailsFragment"
+        android:label="Shoe Details"
+        tools:layout="@layout/fragment_shoe_details">
+        <action
+            android:id="@+id/action_shoeDetailsFragment_to_shoesListFragment"
+            app:destination="@id/shoesListFragment"
+            app:popUpTo="@id/shoesListFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+</navigation>
